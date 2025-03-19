@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b6uk4fbigo02g"
+
+[deps]
+
+files=["res://dogs.animalid.translation", "res://dogs.species.translation", "res://dogs.sex.translation", "res://dogs.bread.translation", "res://dogs.age.translation", "res://dogs.hidden.translation", "res://dogs.hasphto.translation", "res://dogs.photo.translation"]
+
+source_file="res://dogs.csv"
+dest_files=["res://dogs.animalid.translation", "res://dogs.species.translation", "res://dogs.sex.translation", "res://dogs.bread.translation", "res://dogs.age.translation", "res://dogs.hidden.translation", "res://dogs.hasphto.translation", "res://dogs.photo.translation"]
+
+[params]
+
+compress=true
+delimiter=0

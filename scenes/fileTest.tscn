@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cp3md7fnssbmn"]
+
+[node name="Node" type="Node"]
+
+[node name="FileDialog" type="FileDialog" parent="."]
+position = Vector2i(7, 32)
+size = Vector2i(1135, 609)
+visible = true
+popup_window = true
+extend_to_title = true
+min_size = Vector2i(1135, 609)

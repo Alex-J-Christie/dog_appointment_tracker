@@ -1,0 +1,400 @@
+[gd_scene load_steps=16 format=3 uid="uid://dv08ly053jm0w"]
+
+[ext_resource type="Script" path="res://scenes/appointment_profile.gd" id="1_3lb83"]
+[ext_resource type="Shader" path="res://scenes/dog_profile2.gdshader" id="1_h6v7d"]
+[ext_resource type="Texture2D" uid="uid://bm1lsbm6hwvqn" path="res://white.png" id="2_b65jj"]
+[ext_resource type="FontFile" uid="uid://cgxi82mnvgbsg" path="res://fonts/Roboto/Roboto-Black.ttf" id="6_dgs31"]
+[ext_resource type="StyleBox" uid="uid://dxvcadrfhjl1d" path="res://scenes/asavNew_panel.tres" id="7_gs7r2"]
+[ext_resource type="StyleBox" uid="uid://dbig5rwjuc5do" path="res://scenes/dog_profile.tres" id="9_5kysd"]
+[ext_resource type="Texture2D" uid="uid://bgd5bn0hkyo54" path="res://xUI_button.png" id="10_3f4pp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qm8bx"]
+shader = ExtResource("1_h6v7d")
+shader_parameter/radius = 1.0
+shader_parameter/animate = false
+shader_parameter/square_scale = 0.1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxopr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8kbnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gop6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqt8u"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(0.768627, 0.560784, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfqhq"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(1, 0.768627, 0.286275, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1upi"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(0.423529, 0.301961, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3yfm7"]
+texture = ExtResource("10_3f4pp")
+modulate_color = Color(0.407843, 0.309804, 0, 1)
+
+[node name="appointment_profile" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_3lb83")
+
+[node name="backgroundPane" type="TextureRect" parent="."]
+process_mode = 3
+modulate = Color(0.862745, 0.647059, 1, 1)
+material = SubResource("ShaderMaterial_qm8bx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b65jj")
+expand_mode = 2
+
+[node name="profileContainer" type="VBoxContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="partssPContainer" type="HBoxContainer" parent="profileContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="overViewContainer" type="VBoxContainer" parent="profileContainer/partssPContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="serviceBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margins" type="MarginContainer" parent="profileContainer/partssPContainer/overViewContainer/serviceBox"]
+process_mode = 3
+custom_minimum_size = Vector2(251, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 62
+
+[node name="Service" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/serviceBox/Margins"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("6_dgs31")
+theme_override_font_sizes/normal_font_size = 50
+text = "Service:"
+
+[node name="serviceEdit" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/serviceBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_dgs31")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_kxopr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8kbnp")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_0gop6")
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/serviceBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="hSpacer3" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="spacer" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer3"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.22
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="underline" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer3"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.160784, 0, 0.168627, 1)
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer3"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="onBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margins" type="MarginContainer" parent="profileContainer/partssPContainer/overViewContainer/onBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 24
+
+[node name="onboard" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/onBox/Margins"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("6_dgs31")
+theme_override_font_sizes/normal_font_size = 45
+text = "Onboard Date: "
+
+[node name="onEdit" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/onBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.329412, 0.329412, 0.329412, 0.666667)
+theme_override_fonts/font = ExtResource("6_dgs31")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_kxopr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8kbnp")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_0gop6")
+placeholder_text = "format: \"XX-XX-XX\""
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/onBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="hSpacer4" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="spacer" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer4"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.22
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="underline" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer4"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.160784, 0, 0.168627, 1)
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer4"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="offBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margins" type="MarginContainer" parent="profileContainer/partssPContainer/overViewContainer/offBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 24
+
+[node name="offboard" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/offBox/Margins"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("6_dgs31")
+theme_override_font_sizes/normal_font_size = 45
+text = "Offboard Date:"
+
+[node name="offEdit" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/offBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.329412, 0.329412, 0.329412, 0.666667)
+theme_override_fonts/font = ExtResource("6_dgs31")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_kxopr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8kbnp")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_0gop6")
+placeholder_text = "format: \"XX-XX-XX\""
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/offBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="hSpacer5" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="spacer" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer5"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.22
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="underline" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer5"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.160784, 0, 0.168627, 1)
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/hSpacer5"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="buttonBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="spacer3" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.45
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="cancel_button" type="Button" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_dgs31")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xqt8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gfqhq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h1upi")
+theme_override_styles/disabled = ExtResource("7_gs7r2")
+theme_override_styles/focus = ExtResource("7_gs7r2")
+text = "Cancel"
+
+[node name="delete_button" type="Button" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_dgs31")
+theme_override_styles/normal = ExtResource("7_gs7r2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gfqhq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h1upi")
+theme_override_styles/disabled = ExtResource("7_gs7r2")
+theme_override_styles/focus = ExtResource("7_gs7r2")
+text = "Delete"
+
+[node name="edit_info_button" type="Button" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_dgs31")
+theme_override_styles/normal = ExtResource("7_gs7r2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gfqhq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h1upi")
+theme_override_styles/disabled = ExtResource("7_gs7r2")
+theme_override_styles/focus = ExtResource("7_gs7r2")
+text = "Edit"
+
+[node name="save_button" type="Button" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_dgs31")
+theme_override_styles/normal = ExtResource("7_gs7r2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gfqhq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h1upi")
+theme_override_styles/disabled = ExtResource("7_gs7r2")
+theme_override_styles/focus = ExtResource("7_gs7r2")
+text = "Save Current Info"
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.08
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="exit_button" type="Button" parent="."]
+process_mode = 3
+offset_left = 1027.0
+offset_top = 23.0
+offset_right = 1083.0
+offset_bottom = 74.0
+theme_override_styles/normal = ExtResource("9_5kysd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3yfm7")
+theme_override_styles/pressed = ExtResource("9_5kysd")
+theme_override_styles/disabled = ExtResource("9_5kysd")
+theme_override_styles/focus = ExtResource("9_5kysd")
+
+[connection signal="pressed" from="profileContainer/partssPContainer/overViewContainer/buttonBox/cancel_button" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="profileContainer/partssPContainer/overViewContainer/buttonBox/save_button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]

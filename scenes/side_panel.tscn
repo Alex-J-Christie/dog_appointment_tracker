@@ -1,0 +1,141 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqnbkwlaftdm3"]
+
+[ext_resource type="Shader" path="res://scenes/ui.gdshader" id="1_bnxgu"]
+[ext_resource type="Script" path="res://scenes/side_panel.gd" id="1_pfwqv"]
+[ext_resource type="Texture2D" uid="uid://bku1jc7ci15cl" path="res://johnK9_logo.png" id="2_n6ape"]
+[ext_resource type="PackedScene" uid="uid://c7ee21smepm0c" path="res://scenes/info_panel.tscn" id="3_o1lwn"]
+[ext_resource type="StyleBox" uid="uid://4xl6xkrg71ko" path="res://scenes/side_panel.tres" id="3_r64pi"]
+[ext_resource type="PackedScene" uid="uid://dcfpkfs38c5sy" path="res://scenes/search_panel.tscn" id="5_xqxgy"]
+[ext_resource type="PackedScene" uid="uid://42v2tr0rur7f" path="res://scenes/new_panel.tscn" id="7_cdb8x"]
+[ext_resource type="PackedScene" uid="uid://cagmhs7i78u7p" path="res://scenes/stats_panel.tscn" id="8_yllec"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aa7tq"]
+shader = ExtResource("1_bnxgu")
+shader_parameter/radius = 1.0
+shader_parameter/animate = false
+shader_parameter/square_scale = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfakt"]
+bg_color = Color(0.941176, 0.584314, 0.443137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.929412, 0, 0.952941, 1)
+border_blend = true
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwm6g"]
+bg_color = Color(0.341176, 0.141176, 0.0588235, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.929412, 0, 0.952941, 1)
+border_blend = true
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[node name="side_panel" type="HBoxContainer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/separation = 15
+script = ExtResource("1_pfwqv")
+
+[node name="panel_list" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="logo" type="TextureRect" parent="panel_list"]
+material = SubResource("ShaderMaterial_aa7tq")
+layout_mode = 2
+texture = ExtResource("2_n6ape")
+expand_mode = 5
+
+[node name="buttonContainer" type="VBoxContainer" parent="panel_list"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="location_button" type="Button" parent="panel_list/buttonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("3_r64pi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pfakt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwm6g")
+theme_override_styles/disabled = ExtResource("3_r64pi")
+theme_override_styles/focus = ExtResource("3_r64pi")
+text = "Location"
+
+[node name="search_button" type="Button" parent="panel_list/buttonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("3_r64pi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pfakt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwm6g")
+theme_override_styles/disabled = ExtResource("3_r64pi")
+theme_override_styles/focus = ExtResource("3_r64pi")
+text = "Search"
+
+[node name="add_button" type="Button" parent="panel_list/buttonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("3_r64pi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pfakt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwm6g")
+theme_override_styles/disabled = ExtResource("3_r64pi")
+theme_override_styles/focus = ExtResource("3_r64pi")
+text = "Add Profile"
+
+[node name="tba_button" type="Button" parent="panel_list/buttonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("3_r64pi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pfakt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwm6g")
+theme_override_styles/disabled = ExtResource("3_r64pi")
+theme_override_styles/focus = ExtResource("3_r64pi")
+text = "Stats"
+
+[node name="search_panel" parent="." instance=ExtResource("5_xqxgy")]
+layout_mode = 2
+
+[node name="info_panel" parent="." instance=ExtResource("3_o1lwn")]
+visible = false
+layout_mode = 2
+
+[node name="@HScrollBar@457526" type="HScrollBar" parent="info_panel/ScrollContainer" index="1"]
+visible = false
+layout_mode = 2
+max_value = 1613.0
+page = 1024.0
+
+[node name="@VScrollBar@457527" type="VScrollBar" parent="info_panel/ScrollContainer" index="2"]
+visible = false
+layout_mode = 2
+max_value = 88.0
+page = 88.0
+
+[node name="new_panel" parent="." instance=ExtResource("7_cdb8x")]
+visible = false
+layout_mode = 2
+size_flags_stretch_ratio = 0.9
+
+[node name="stats_panel" parent="." instance=ExtResource("8_yllec")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="panel_list/buttonContainer/location_button" to="." method="_on_location_button_pressed"]
+[connection signal="pressed" from="panel_list/buttonContainer/search_button" to="." method="_on_search_button_pressed"]
+[connection signal="pressed" from="panel_list/buttonContainer/add_button" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="panel_list/buttonContainer/tba_button" to="." method="_on_tba_button_pressed"]
+
+[editable path="search_panel"]
+[editable path="search_panel/table"]
+[editable path="info_panel"]
+[editable path="new_panel"]

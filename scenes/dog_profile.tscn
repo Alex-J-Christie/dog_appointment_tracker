@@ -1,0 +1,651 @@
+[gd_scene load_steps=30 format=3 uid="uid://bvsf4almnf4hw"]
+
+[ext_resource type="Shader" path="res://scenes/dog_profile2.gdshader" id="1_1w68d"]
+[ext_resource type="Script" path="res://scenes/dog_profile.gd" id="1_8i07k"]
+[ext_resource type="Texture2D" uid="uid://1yveec70k0yt" path="res://localhost-file-not-found.jpg" id="1_c5pu2"]
+[ext_resource type="Shader" path="res://scenes/dog_profile.gdshader" id="1_jg5ms"]
+[ext_resource type="Texture2D" uid="uid://c1sis18tfol44" path="res://bone.png" id="3_rqygq"]
+[ext_resource type="Texture2D" uid="uid://bm1lsbm6hwvqn" path="res://white.png" id="3_wa2hw"]
+[ext_resource type="FontFile" uid="uid://cgxi82mnvgbsg" path="res://fonts/Roboto/Roboto-Black.ttf" id="4_o21gk"]
+[ext_resource type="StyleBox" uid="uid://dxvcadrfhjl1d" path="res://scenes/asavNew_panel.tres" id="8_0ts38"]
+[ext_resource type="StyleBox" uid="uid://dbig5rwjuc5do" path="res://scenes/dog_profile.tres" id="8_a5sqj"]
+[ext_resource type="Texture2D" uid="uid://1ne2bnpqeonq" path="res://lower_border.png" id="8_ouwly"]
+[ext_resource type="Texture2D" uid="uid://bgd5bn0hkyo54" path="res://xUI_button.png" id="8_sehjl"]
+[ext_resource type="StyleBox" uid="uid://6kmgc0f0ptbp" path="res://scenes/new_panel.tres" id="9_5f4rm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1n5fr"]
+shader = ExtResource("1_1w68d")
+shader_parameter/radius = 1.0
+shader_parameter/animate = false
+shader_parameter/square_scale = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_drwlr"]
+shader = ExtResource("1_jg5ms")
+shader_parameter/radius = 1.0
+shader_parameter/animate = false
+shader_parameter/square_scale = 0.5
+
+[sub_resource type="Gradient" id="Gradient_3tupt"]
+offsets = PackedFloat32Array(0.0710901, 0.995261)
+colors = PackedColorArray(0.509804, 0, 0.505882, 1, 0.333333, 0.647059, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fxa1r"]
+gradient = SubResource("Gradient_3tupt")
+width = 261
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7h6uo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uq8jw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xopwt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn7o6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3u0l"]
+texture = ExtResource("8_ouwly")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ieal"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y182b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3qul"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(0.768627, 0.560784, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrmu0"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(1, 0.768627, 0.286275, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_podsb"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(0.423529, 0.301961, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjvpv"]
+bg_color = Color(1, 0.760784, 0.258824, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5ute"]
+bg_color = Color(0.419608, 0.298039, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bohmu"]
+texture = ExtResource("8_sehjl")
+modulate_color = Color(0.407843, 0.309804, 0, 1)
+
+[node name="dog_profile" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8i07k")
+
+[node name="backgroundPane" type="TextureRect" parent="."]
+process_mode = 3
+modulate = Color(0.862745, 0.647059, 1, 1)
+material = SubResource("ShaderMaterial_1n5fr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wa2hw")
+expand_mode = 2
+
+[node name="profileContainer" type="VBoxContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="partssPContainer" type="HBoxContainer" parent="profileContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="pictureContainer" type="Control" parent="profileContainer/partssPContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="profilePicture" type="TextureRect" parent="profileContainer/partssPContainer/pictureContainer"]
+process_mode = 3
+material = SubResource("ShaderMaterial_drwlr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_fxa1r")
+expand_mode = 1
+
+[node name="profilePicture" type="TextureRect" parent="profileContainer/partssPContainer/pictureContainer/profilePicture"]
+process_mode = 3
+material = SubResource("ShaderMaterial_drwlr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 10.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_c5pu2")
+expand_mode = 1
+
+[node name="bone" type="TextureRect" parent="profileContainer/partssPContainer/pictureContainer"]
+process_mode = 3
+self_modulate = Color(0.760784, 0.419608, 0, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -133.0
+offset_right = 31.0
+offset_bottom = 102.456
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.838152, 0.546977)
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+texture = ExtResource("3_rqygq")
+expand_mode = 5
+
+[node name="bone" type="TextureRect" parent="profileContainer/partssPContainer/pictureContainer/bone"]
+process_mode = 3
+self_modulate = Color(0.52549, 0.54902, 0.105882, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -175.0
+offset_right = 6.0
+offset_bottom = 8.2865
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+texture = ExtResource("3_rqygq")
+expand_mode = 5
+
+[node name="name" type="RichTextLabel" parent="profileContainer/partssPContainer/pictureContainer/bone"]
+process_mode = 3
+layout_mode = 0
+offset_left = 160.0
+offset_top = 103.456
+offset_right = 413.0
+offset_bottom = 177.456
+focus_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_o21gk")
+theme_override_font_sizes/normal_font_size = 24
+fit_content = true
+scroll_active = false
+selection_enabled = true
+
+[node name="overViewContainer" type="VBoxContainer" parent="profileContainer/partssPContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="overviewBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="spacer1" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/overviewBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7h6uo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uq8jw")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_xopwt")
+editable = false
+
+[node name="Overview" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/overviewBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+theme_override_fonts/normal_font = ExtResource("4_o21gk")
+text = "Overview"
+
+[node name="spacer2" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/overviewBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7h6uo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uq8jw")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_dn7o6")
+editable = false
+
+[node name="breedBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Breed" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/breedBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("4_o21gk")
+theme_override_font_sizes/normal_font_size = 32
+text = "Breed"
+
+[node name="breedEdit" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/breedBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3u0l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ieal")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_y182b")
+alignment = 2
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/breedBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="sexBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sex" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/sexBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("4_o21gk")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sex"
+
+[node name="sexEdit" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/sexBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3u0l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ieal")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_y182b")
+alignment = 2
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/sexBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="ageBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Age" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/ageBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("4_o21gk")
+theme_override_font_sizes/normal_font_size = 40
+text = "Age"
+
+[node name="ageEdit" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/ageBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3u0l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ieal")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_y182b")
+alignment = 2
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/ageBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="roleBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Role" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/roleBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("4_o21gk")
+theme_override_font_sizes/normal_font_size = 40
+text = "Role"
+
+[node name="roleEdit" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/roleBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3u0l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ieal")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_y182b")
+alignment = 2
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/roleBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="notesBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Notes" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/notesBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("4_o21gk")
+theme_override_font_sizes/normal_font_size = 32
+text = "Notes"
+
+[node name="noteEdit" type="LineEdit" parent="profileContainer/partssPContainer/overViewContainer/notesBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3u0l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ieal")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_y182b")
+alignment = 2
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/notesBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="locationBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="m" type="MarginContainer" parent="profileContainer/partssPContainer/overViewContainer/locationBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.09
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = -59
+theme_override_constants/margin_bottom = -14
+
+[node name="Location" type="RichTextLabel" parent="profileContainer/partssPContainer/overViewContainer/locationBox/m"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_fonts/normal_font = ExtResource("4_o21gk")
+theme_override_font_sizes/normal_font_size = 34
+text = "Location:"
+
+[node name="locationButton" type="OptionButton" parent="profileContainer/partssPContainer/overViewContainer/locationBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.4
+theme_override_styles/focus = ExtResource("9_5f4rm")
+theme_override_styles/normal = ExtResource("9_5f4rm")
+theme_override_styles/hover = ExtResource("9_5f4rm")
+theme_override_styles/pressed = ExtResource("9_5f4rm")
+theme_override_styles/disabled = ExtResource("9_5f4rm")
+theme_override_styles/normal_mirrored = ExtResource("9_5f4rm")
+theme_override_styles/hover_mirrored = ExtResource("9_5f4rm")
+theme_override_styles/pressed_mirrored = ExtResource("9_5f4rm")
+theme_override_styles/disabled_mirrored = ExtResource("9_5f4rm")
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/locationBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="buttonBox" type="HBoxContainer" parent="profileContainer/partssPContainer/overViewContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="spacer3" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.45
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="cancel_button" type="Button" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_o21gk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p3qul")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lrmu0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_podsb")
+theme_override_styles/disabled = ExtResource("8_0ts38")
+theme_override_styles/focus = ExtResource("8_0ts38")
+text = "Cancel"
+
+[node name="delete_button" type="Button" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_o21gk")
+theme_override_styles/normal = ExtResource("8_0ts38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lrmu0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_podsb")
+theme_override_styles/disabled = ExtResource("8_0ts38")
+theme_override_styles/focus = ExtResource("8_0ts38")
+text = "Delete"
+
+[node name="edit_info_button" type="Button" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_o21gk")
+theme_override_styles/normal = ExtResource("8_0ts38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lrmu0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_podsb")
+theme_override_styles/disabled = ExtResource("8_0ts38")
+theme_override_styles/focus = ExtResource("8_0ts38")
+text = "Edit"
+
+[node name="save_button" type="Button" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_o21gk")
+theme_override_styles/normal = ExtResource("8_0ts38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lrmu0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_podsb")
+theme_override_styles/disabled = ExtResource("8_0ts38")
+theme_override_styles/focus = ExtResource("8_0ts38")
+text = "Save Current Info"
+
+[node name="spacer2" type="ColorRect" parent="profileContainer/partssPContainer/overViewContainer/buttonBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.08
+color = Color(0.160784, 0, 0.168627, 0)
+
+[node name="appointment_chooser" type="HBoxContainer" parent="profileContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="filterBox" type="MarginContainer" parent="profileContainer/appointment_chooser"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 25
+
+[node name="visitContainer" type="VBoxContainer" parent="profileContainer/appointment_chooser/filterBox"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="appointmentSort" type="Label" parent="profileContainer/appointment_chooser/filterBox/visitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_o21gk")
+text = "Appointment Sort"
+
+[node name="OptionButton" type="OptionButton" parent="profileContainer/appointment_chooser/filterBox/visitContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/focus = ExtResource("9_5f4rm")
+theme_override_styles/normal = ExtResource("9_5f4rm")
+theme_override_styles/hover = ExtResource("9_5f4rm")
+theme_override_styles/pressed = ExtResource("9_5f4rm")
+theme_override_styles/disabled = ExtResource("9_5f4rm")
+theme_override_styles/normal_mirrored = ExtResource("9_5f4rm")
+theme_override_styles/hover_mirrored = ExtResource("9_5f4rm")
+theme_override_styles/pressed_mirrored = ExtResource("9_5f4rm")
+theme_override_styles/disabled_mirrored = ExtResource("9_5f4rm")
+item_count = 3
+popup/item_0/text = "Service"
+popup/item_0/id = 0
+popup/item_1/text = "Date Boarded"
+popup/item_1/id = 1
+popup/item_2/text = "Date Offloaded"
+popup/item_2/id = 2
+
+[node name="add_appointment_button" type="Button" parent="profileContainer/appointment_chooser/filterBox/visitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_o21gk")
+theme_override_styles/normal = ExtResource("8_0ts38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pjvpv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i5ute")
+theme_override_styles/disabled = ExtResource("8_0ts38")
+theme_override_styles/focus = ExtResource("8_0ts38")
+text = "Add Appointment"
+
+[node name="MarginContainer" type="MarginContainer" parent="profileContainer/appointment_chooser"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="profileContainer/appointment_chooser/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="scrolling_appointment_list" type="HBoxContainer" parent="profileContainer/appointment_chooser/MarginContainer/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="exit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1030.0
+offset_top = -6.0
+offset_right = 1086.0
+offset_bottom = 45.0
+theme_override_styles/normal = ExtResource("8_a5sqj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bohmu")
+theme_override_styles/pressed = ExtResource("8_a5sqj")
+theme_override_styles/disabled = ExtResource("8_a5sqj")
+theme_override_styles/focus = ExtResource("8_a5sqj")
+
+[connection signal="pressed" from="profileContainer/partssPContainer/overViewContainer/buttonBox/cancel_button" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="profileContainer/partssPContainer/overViewContainer/buttonBox/delete_button" to="." method="_on_delete_button_pressed"]
+[connection signal="pressed" from="profileContainer/partssPContainer/overViewContainer/buttonBox/edit_info_button" to="." method="_on_edit_info_button_pressed"]
+[connection signal="pressed" from="profileContainer/partssPContainer/overViewContainer/buttonBox/save_button" to="." method="_on_save_button_pressed"]
+[connection signal="item_selected" from="profileContainer/appointment_chooser/filterBox/visitContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="profileContainer/appointment_chooser/filterBox/visitContainer/add_appointment_button" to="." method="_on_add_appointment_button_pressed"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]

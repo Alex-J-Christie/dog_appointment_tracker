@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://d0aqxyrbqyoip"]
+
+[ext_resource type="Texture2D" uid="uid://1ne2bnpqeonq" path="res://lower_border.png" id="1_uypcf"]
+
+[resource]
+texture = ExtResource("1_uypcf")
+modulate_color = Color(0, 0, 0, 1)

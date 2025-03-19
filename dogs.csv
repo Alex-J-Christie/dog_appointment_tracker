@@ -1,0 +1,25 @@
+name,animalid,species,sex,bread,age,hidden,hasphto,photo
+MACK (FOSTER),19534339,Dog,Male/Neutered,"Terrier, Pit Bull/Mix",2 years 4 months,Foster,True,http://www.petango.com/sms/photos/1130/2f575744-95ba-4680-a87e-23030c2a7352_TN1.jpg
+REMY (FOSTER),20125699,Dog,Male/Neutered,"Boxer/Terrier, Pit Bull", 10 months,Foster,True,http://www.petango.com/sms/photos/1130/776aef3c-5bd0-42ed-96c7-ba130828f116_TN1.jpg
+HENNESSY (FOSTER),20156213,Dog,Female/Spayed,"Terrier, Pit Bull/Mix",1 year 1 month,Foster,True,http://www.petango.com/sms/photos/1130/e893bad9-9565-4437-b7f1-d79f84d10f22_TN1.jpg
+LOVELY (FOSTER),20315796,Dog,Female/Spayed,"Terrier, Pit Bull/Hound",2 years 1 month,Foster,True,http://www.petango.com/sms/photos/1130/e78458ff-3aaa-48b4-abe0-e5814edd38f1_TN1.jpg
+GREGGY (FOSTER),20346725,Dog,Male/Neutered,"Terrier, Pit Bull/Mix", 11 months,Foster,True,http://www.petango.com/sms/photos/1130/de0363be-d2e4-4d66-85d8-62cc92aa39d6_TN1.jpg
+DOZER (FOSTER),20346815,Dog,Male/Neutered,"Retriever, Labrador/Mix",8 years,Foster,True,http://www.petango.com/sms/photos/1130/cd20db38-23e9-46ee-89c5-67039dc2f473_TN1.jpg
+MEGAN (FOSTER),20355571,Dog,Female/Spayed,"Terrier, Pit Bull/Mix", 7 months,Foster,True,http://www.petango.com/sms/photos/1130/663c2db8-f27f-46b9-84aa-00b96db85559_TN1.jpg
+GONZO (FOSTER),20530283,Dog,Male/Neutered,Bulldog/Mix,2 years,Foster,True,http://www.petango.com/sms/photos/1130/e60b3137-4609-491b-93fc-3c81a11181b2_TN1.jpg
+HARLIE,20580860,Dog,Female,"Hound/Retriever, Labrador",2 years,Adoption,True,http://www.petango.com/sms/photos/1130/5c9eef5e-b8c6-49d7-bc9c-8b474a932884_TN1.jpg
+BRENDA,20612512,Dog,Female,"Terrier, Pit Bull/Mix", 6 months,Adoption,True,http://www.petango.com/sms/photos/1130/c3c36392-1519-421a-bd4d-4574cb536fe5_TN1.jpg
+KIPPER,20622604,Dog,Female,"Terrier, Pit Bull/Mix", 7 months,Adoption,True,http://www.petango.com/sms/photos/1130/4b770400-b60f-4311-a032-f79377844912_TN1.jpg
+KASH,20642032,Dog,Male,"Terrier, Pit Bull/Mix",1 year,Adoption,True,http://www.petango.com/sms/photos/1130/4a65b7dc-4ab4-4004-9e84-794c005a479b_TN1.jpg
+OAKLEY,20650748,Dog,Male,Terrier/Mix,5 years,Adoption,True,http://www.petango.com/sms/photos/1130/88b97337-fe35-45e2-86f3-0e77088dafc9_TN1.jpg
+JACK,20650819,Dog,Male,"Terrier, Pit Bull/Mix",2 years,Adoption,False,http://sms.petpoint.com/sms3/emails/images/Photo-Not-Available-dog.gif
+DEVO,20650881,Dog,Male,"Chihuahua, Short Coat",1 year 6 months,Adoption,True,http://www.petango.com/sms/photos/1130/d73f4f56-9628-4e41-8662-9d0b48d51454_TN1.jpg
+SNOWBALL,20650911,Dog,Female,"Poodle, Miniature",2 years,Adoption,True,http://www.petango.com/sms/photos/1130/3d1ff9b9-08fc-4e8e-a251-065bb0493b7a_TN1.jpg
+RAMBO,20661634,Dog,Male,"Shepherd/Terrier, Pit Bull",1 year,Adoption,True,http://www.petango.com/sms/photos/1130/c5fe77ba-26c2-478b-8fd0-160852eeb9d6_TN1.jpg
+ARIES,20661677,Dog,Female,"Terrier, Pit Bull/Mix", 8 months,Adoption,False,http://sms.petpoint.com/sms3/emails/images/Photo-Not-Available-dog.gif
+BROOKLYN,20661866,Dog,Female,"Terrier, Pit Bull/Mix",1 year,Adoption,True,http://www.petango.com/sms/photos/1130/f37cbb67-24fd-4848-87b7-9b66f0da2d32_TN1.jpg
+HEAVEN,20670962,Dog,Male,"Chihuahua, Short Coat/Mix",1 year,Puppy Room,False,http://sms.petpoint.com/sms3/emails/images/Photo-Not-Available-dog.gif
+COCCO,20670974,Dog,Female,"Chihuahua, Short Coat/Mix", 7 months,Puppy Room,False,http://sms.petpoint.com/sms3/emails/images/Photo-Not-Available-dog.gif
+BIANCA,20670982,Dog,Female,"Chihuahua, Short Coat/Mix", 7 months,Puppy Room,False,http://sms.petpoint.com/sms3/emails/images/Photo-Not-Available-dog.gif
+CHICA,20681562,Dog,Female,"Retriever, Labrador/Terrier, Pit Bull", 9 months,Adoption,False,http://sms.petpoint.com/sms3/emails/images/Photo-Not-Available-dog.gif
+RYDER,20681746,Dog,Male/Neutered,Hound/Mix,5 years,Adoption,False,http://sms.petpoint.com/sms3/emails/images/Photo-Not-Available-dog.gif

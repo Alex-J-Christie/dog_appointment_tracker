@@ -1,0 +1,146 @@
+[gd_scene load_steps=7 format=3 uid="uid://chplvbq07kwmu"]
+
+[ext_resource type="StyleBox" uid="uid://dxvcadrfhjl1d" path="res://scenes/asavNew_panel.tres" id="1_1ko5s"]
+[ext_resource type="FontFile" uid="uid://cgxi82mnvgbsg" path="res://fonts/Roboto/Roboto-Black.ttf" id="1_2f5fw"]
+[ext_resource type="Script" path="res://scenes/dev_panel.gd" id="1_txwiq"]
+[ext_resource type="StyleBox" uid="uid://dbig5rwjuc5do" path="res://scenes/dog_profile.tres" id="4_hgthj"]
+[ext_resource type="Texture2D" uid="uid://bgd5bn0hkyo54" path="res://xUI_button.png" id="5_7rb5h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_863oe"]
+texture = ExtResource("5_7rb5h")
+modulate_color = Color(0.407843, 0.309804, 0, 1)
+
+[node name="dev_panel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_txwiq")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.435294)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vboxOver" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="buttonList1" type="HBoxContainer" parent="CenterContainer/vboxOver"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="dogButton" type="Button" parent="CenterContainer/vboxOver/buttonList1"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2f5fw")
+theme_override_styles/normal = ExtResource("1_1ko5s")
+theme_override_styles/hover = ExtResource("1_1ko5s")
+theme_override_styles/pressed = ExtResource("1_1ko5s")
+theme_override_styles/disabled = ExtResource("1_1ko5s")
+theme_override_styles/focus = ExtResource("1_1ko5s")
+text = "Populate with dogs"
+
+[node name="appointmentButton" type="Button" parent="CenterContainer/vboxOver/buttonList1"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2f5fw")
+theme_override_styles/normal = ExtResource("1_1ko5s")
+theme_override_styles/hover = ExtResource("1_1ko5s")
+theme_override_styles/pressed = ExtResource("1_1ko5s")
+theme_override_styles/disabled = ExtResource("1_1ko5s")
+theme_override_styles/focus = ExtResource("1_1ko5s")
+text = "Populate Appointments"
+
+[node name="buttonList2" type="HBoxContainer" parent="CenterContainer/vboxOver"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="dogDelete" type="Button" parent="CenterContainer/vboxOver/buttonList2"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2f5fw")
+theme_override_styles/normal = ExtResource("1_1ko5s")
+theme_override_styles/hover = ExtResource("1_1ko5s")
+theme_override_styles/pressed = ExtResource("1_1ko5s")
+theme_override_styles/disabled = ExtResource("1_1ko5s")
+theme_override_styles/focus = ExtResource("1_1ko5s")
+text = "delete all dogs"
+
+[node name="appointmentDelete" type="Button" parent="CenterContainer/vboxOver/buttonList2"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2f5fw")
+theme_override_styles/normal = ExtResource("1_1ko5s")
+theme_override_styles/hover = ExtResource("1_1ko5s")
+theme_override_styles/pressed = ExtResource("1_1ko5s")
+theme_override_styles/disabled = ExtResource("1_1ko5s")
+theme_override_styles/focus = ExtResource("1_1ko5s")
+text = "delete all appointments"
+
+[node name="buttonList3" type="HBoxContainer" parent="CenterContainer/vboxOver"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="test" type="Button" parent="CenterContainer/vboxOver/buttonList3"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2f5fw")
+theme_override_styles/normal = ExtResource("1_1ko5s")
+theme_override_styles/hover = ExtResource("1_1ko5s")
+theme_override_styles/pressed = ExtResource("1_1ko5s")
+theme_override_styles/disabled = ExtResource("1_1ko5s")
+theme_override_styles/focus = ExtResource("1_1ko5s")
+text = "MISC"
+
+[node name="location2Button" type="Button" parent="CenterContainer/vboxOver/buttonList3"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2f5fw")
+theme_override_styles/normal = ExtResource("1_1ko5s")
+theme_override_styles/hover = ExtResource("1_1ko5s")
+theme_override_styles/pressed = ExtResource("1_1ko5s")
+theme_override_styles/disabled = ExtResource("1_1ko5s")
+theme_override_styles/focus = ExtResource("1_1ko5s")
+text = "locations"
+
+[node name="exit_button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1026.0
+offset_top = 71.0
+offset_right = 1082.0
+offset_bottom = 122.0
+theme_override_styles/normal = ExtResource("4_hgthj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_863oe")
+theme_override_styles/pressed = ExtResource("4_hgthj")
+theme_override_styles/disabled = ExtResource("4_hgthj")
+theme_override_styles/focus = ExtResource("4_hgthj")
+
+[connection signal="pressed" from="CenterContainer/vboxOver/buttonList1/dogButton" to="." method="_on_dog_button_pressed"]
+[connection signal="pressed" from="CenterContainer/vboxOver/buttonList1/appointmentButton" to="." method="_on_appointment_button_pressed"]
+[connection signal="pressed" from="CenterContainer/vboxOver/buttonList2/dogDelete" to="." method="_on_dog_delete_pressed"]
+[connection signal="pressed" from="CenterContainer/vboxOver/buttonList2/appointmentDelete" to="." method="_on_appointment_delete_pressed"]
+[connection signal="pressed" from="CenterContainer/vboxOver/buttonList3/test" to="." method="_on_test_pressed"]
+[connection signal="pressed" from="CenterContainer/vboxOver/buttonList3/location2Button" to="." method="_on_location_2_button_pressed"]

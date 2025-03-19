@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://cagmhs7i78u7p"]
+
+[ext_resource type="Script" path="res://scenes/stats_panel.gd" id="1_rqvxj"]
+[ext_resource type="FontFile" uid="uid://cgxi82mnvgbsg" path="res://fonts/Roboto/Roboto-Black.ttf" id="2_g0cg8"]
+
+[node name="stats_panel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+script = ExtResource("1_rqvxj")
+
+[node name="stat_list" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="spacer" type="RichTextLabel" parent="stat_list"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 19
+
+[node name="Today\'s Date" type="RichTextLabel" parent="stat_list"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_g0cg8")
+theme_override_font_sizes/normal_font_size = 19
+
+[node name="Dogs Currently Boarded" type="RichTextLabel" parent="stat_list"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_g0cg8")
+theme_override_font_sizes/normal_font_size = 19
+
+[node name="Dogs In System" type="RichTextLabel" parent="stat_list"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_g0cg8")
+theme_override_font_sizes/normal_font_size = 19
+
+[node name="Upcoming Offboarding Dates" type="RichTextLabel" parent="stat_list"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_g0cg8")
+theme_override_font_sizes/normal_font_size = 19
+
+[node name="Upcoming Onboarding Dates" type="RichTextLabel" parent="stat_list"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_g0cg8")
+theme_override_font_sizes/normal_font_size = 19
+
+[node name="Date Board" type="RichTextLabel" parent="stat_list"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_g0cg8")
+theme_override_font_sizes/normal_font_size = 19

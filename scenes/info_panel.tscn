@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ee21smepm0c"]
+
+[ext_resource type="Script" path="res://scenes/info_panel.gd" id="1_j26gg"]
+[ext_resource type="PackedScene" uid="uid://cdrfh4m3t5yu3" path="res://scenes/table.tscn" id="1_mloun"]
+
+[node name="info_panel" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+script = ExtResource("1_j26gg")
+
+[node name="spacer" type="Container" parent="."]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 19.0
+horizontal_scroll_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 60
+alignment = 2
+
+[node name="table" parent="." instance=ExtResource("1_mloun")]
+layout_mode = 2
+size_flags_stretch_ratio = 80.0
+type = "location"

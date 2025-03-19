@@ -1,0 +1,374 @@
+[gd_scene load_steps=11 format=3 uid="uid://42v2tr0rur7f"]
+
+[ext_resource type="Script" path="res://scenes/new_panel.gd" id="1_f5cx2"]
+[ext_resource type="Texture2D" uid="uid://bm1lsbm6hwvqn" path="res://white.png" id="1_rjxy5"]
+[ext_resource type="FontFile" uid="uid://cgxi82mnvgbsg" path="res://fonts/Roboto/Roboto-Black.ttf" id="2_q5c2r"]
+[ext_resource type="StyleBox" uid="uid://d0aqxyrbqyoip" path="res://scenes/new_panel_line.tres" id="4_ehsmr"]
+[ext_resource type="StyleBox" uid="uid://6kmgc0f0ptbp" path="res://scenes/new_panel.tres" id="5_byvjp"]
+[ext_resource type="StyleBox" uid="uid://dxvcadrfhjl1d" path="res://scenes/asavNew_panel.tres" id="6_gg6f0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cpat"]
+bg_color = Color(0.278431, 0.603922, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pyv8u"]
+bg_color = Color(1, 0.784314, 0.356863, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llrm8"]
+bg_color = Color(0.392157, 0.278431, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sj0bb"]
+bg_color = Color(1, 0.784314, 0.356863, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="new_panel" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_f5cx2")
+
+[node name="topCon" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="Photo" type="MarginContainer" parent="topCon"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 28
+
+[node name="photo_button" type="TextureButton" parent="topCon/Photo"]
+layout_mode = 2
+texture_normal = ExtResource("1_rjxy5")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="textMargin" type="MarginContainer" parent="topCon/Photo/photo_button"]
+layout_mode = 0
+offset_top = 133.0
+offset_right = 564.0
+offset_bottom = 227.0
+theme_override_constants/margin_left = 81
+theme_override_constants/margin_top = 40
+
+[node name="click here to replace photo" type="RichTextLabel" parent="topCon/Photo/photo_button/textMargin"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 39
+text = "Click Here to Add Photo"
+
+[node name="firstQuestions" type="MarginContainer" parent="topCon"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fQuestions" type="HBoxContainer" parent="topCon/firstQuestions"]
+layout_mode = 2
+
+[node name="non_editable_labels" type="MarginContainer" parent="topCon/firstQuestions/fQuestions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.19
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 28
+
+[node name="labels" type="VBoxContainer" parent="topCon/firstQuestions/fQuestions/non_editable_labels"]
+layout_mode = 2
+
+[node name="name" type="RichTextLabel" parent="topCon/firstQuestions/fQuestions/non_editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 15
+text = "Name:"
+
+[node name="breed" type="RichTextLabel" parent="topCon/firstQuestions/fQuestions/non_editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 15
+text = "Breed:"
+
+[node name="sex" type="RichTextLabel" parent="topCon/firstQuestions/fQuestions/non_editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 15
+text = "Sex:"
+
+[node name="age" type="RichTextLabel" parent="topCon/firstQuestions/fQuestions/non_editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 15
+text = "Age:"
+
+[node name="role" type="RichTextLabel" parent="topCon/firstQuestions/fQuestions/non_editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 15
+text = "Role:"
+
+[node name="locations" type="RichTextLabel" parent="topCon/firstQuestions/fQuestions/non_editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 15
+text = "Locations:"
+
+[node name="notes" type="RichTextLabel" parent="topCon/firstQuestions/fQuestions/non_editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 15
+text = "Notes:"
+
+[node name="editable_labels" type="MarginContainer" parent="topCon/firstQuestions/fQuestions"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="labels" type="VBoxContainer" parent="topCon/firstQuestions/fQuestions/editable_labels"]
+layout_mode = 2
+
+[node name="name" type="LineEdit" parent="topCon/firstQuestions/fQuestions/editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("4_ehsmr")
+placeholder_text = "       type here"
+
+[node name="breed" type="LineEdit" parent="topCon/firstQuestions/fQuestions/editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("4_ehsmr")
+placeholder_text = "       type here"
+
+[node name="sex" type="OptionButton" parent="topCon/firstQuestions/fQuestions/editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("5_byvjp")
+theme_override_styles/normal = ExtResource("5_byvjp")
+theme_override_styles/hover = ExtResource("5_byvjp")
+theme_override_styles/pressed = ExtResource("5_byvjp")
+theme_override_styles/disabled = ExtResource("5_byvjp")
+theme_override_styles/normal_mirrored = ExtResource("5_byvjp")
+theme_override_styles/hover_mirrored = ExtResource("5_byvjp")
+theme_override_styles/pressed_mirrored = ExtResource("5_byvjp")
+theme_override_styles/disabled_mirrored = ExtResource("5_byvjp")
+item_count = 4
+popup/item_0/text = "Male/Neutered"
+popup/item_0/id = 0
+popup/item_1/text = "Female/Spayed"
+popup/item_1/id = 1
+popup/item_2/text = "Female"
+popup/item_2/id = 2
+popup/item_3/text = "Male"
+popup/item_3/id = 3
+
+[node name="age" type="LineEdit" parent="topCon/firstQuestions/fQuestions/editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("4_ehsmr")
+placeholder_text = "       type here"
+
+[node name="role" type="LineEdit" parent="topCon/firstQuestions/fQuestions/editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("4_ehsmr")
+placeholder_text = "       type here"
+
+[node name="locations" type="OptionButton" parent="topCon/firstQuestions/fQuestions/editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/focus = ExtResource("5_byvjp")
+theme_override_styles/normal = ExtResource("5_byvjp")
+theme_override_styles/hover = ExtResource("5_byvjp")
+theme_override_styles/pressed = ExtResource("5_byvjp")
+theme_override_styles/disabled = ExtResource("5_byvjp")
+theme_override_styles/normal_mirrored = ExtResource("5_byvjp")
+theme_override_styles/hover_mirrored = ExtResource("5_byvjp")
+theme_override_styles/pressed_mirrored = ExtResource("5_byvjp")
+theme_override_styles/disabled_mirrored = ExtResource("5_byvjp")
+
+[node name="notes" type="LineEdit" parent="topCon/firstQuestions/fQuestions/editable_labels/labels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("4_ehsmr")
+placeholder_text = "       type here"
+
+[node name="bottomCon" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="forCenter" type="MarginContainer" parent="bottomCon"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 10
+
+[node name="addAppointment" type="RichTextLabel" parent="bottomCon/forCenter"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 25
+text = "Add an Appointment? (Optional)"
+
+[node name="options" type="HBoxContainer" parent="bottomCon"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="servicesContainer" type="MarginContainer" parent="bottomCon/options"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 79
+theme_override_constants/margin_top = 5
+
+[node name="servicesLabel" type="RichTextLabel" parent="bottomCon/options/servicesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 12
+text = "Services:"
+
+[node name="services" type="OptionButton" parent="bottomCon/options"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = ExtResource("5_byvjp")
+theme_override_styles/normal = ExtResource("5_byvjp")
+theme_override_styles/hover = ExtResource("5_byvjp")
+theme_override_styles/pressed = ExtResource("5_byvjp")
+theme_override_styles/disabled = ExtResource("5_byvjp")
+theme_override_styles/normal_mirrored = ExtResource("5_byvjp")
+theme_override_styles/hover_mirrored = ExtResource("5_byvjp")
+theme_override_styles/pressed_mirrored = ExtResource("5_byvjp")
+theme_override_styles/disabled_mirrored = ExtResource("5_byvjp")
+item_count = 9
+popup/item_0/text = "Private Obedience Lessons"
+popup/item_0/id = 0
+popup/item_1/text = "Training Camp"
+popup/item_1/id = 1
+popup/item_2/text = "Board and Train Camp"
+popup/item_2/id = 2
+popup/item_3/text = "Puppy 101 Lessons"
+popup/item_3/id = 3
+popup/item_4/text = "John K9 Junior Camp"
+popup/item_4/id = 4
+popup/item_5/text = "Specialty or Trick Training"
+popup/item_5/id = 5
+popup/item_6/text = "Doggy Daycare"
+popup/item_6/id = 6
+popup/item_7/text = "Alumni ​Overnight Boarding"
+popup/item_7/id = 7
+popup/item_8/text = "Non-Alumni Overnight Boarding"
+popup/item_8/id = 8
+
+[node name="date_boarded" type="MarginContainer" parent="bottomCon/options"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 6
+
+[node name="date_on_label" type="RichTextLabel" parent="bottomCon/options/date_boarded"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 12
+text = "Date of Appointment:"
+
+[node name="date_on_edit" type="LineEdit" parent="bottomCon/options"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_ehsmr")
+theme_override_styles/focus = ExtResource("4_ehsmr")
+theme_override_styles/read_only = ExtResource("4_ehsmr")
+placeholder_text = "    type here"
+
+[node name="date_to_offload" type="MarginContainer" parent="bottomCon/options"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+
+[node name="date_off_label" type="RichTextLabel" parent="bottomCon/options/date_to_offload"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_q5c2r")
+theme_override_font_sizes/normal_font_size = 12
+text = "Date of Appointment:"
+
+[node name="date_off_edit" type="LineEdit" parent="bottomCon/options"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_ehsmr")
+theme_override_styles/focus = ExtResource("4_ehsmr")
+theme_override_styles/read_only = ExtResource("4_ehsmr")
+placeholder_text = "   type here"
+
+[node name="spacer" type="Panel" parent="bottomCon"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.22
+theme_override_styles/panel = SubResource("StyleBoxFlat_7cpat")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bottomCon/spacer"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 12.0
+offset_right = 1114.0
+offset_bottom = 104.0
+text = "Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs Are Good. Dogs are Go"
+
+[node name="buttons" type="HBoxContainer" parent="bottomCon"]
+layout_mode = 2
+
+[node name="resetButton" type="Button" parent="bottomCon/buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_q5c2r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_gg6f0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pyv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_llrm8")
+theme_override_styles/disabled = ExtResource("6_gg6f0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sj0bb")
+text = "Reset"
+
+[node name="saveButton" type="Button" parent="bottomCon/buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_q5c2r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("6_gg6f0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pyv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_llrm8")
+theme_override_styles/disabled = ExtResource("6_gg6f0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sj0bb")
+text = "Save"
+
+[connection signal="mouse_entered" from="topCon/Photo/photo_button" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="topCon/Photo/photo_button" to="." method="_on_photo_button_mouse_exited"]
+[connection signal="pressed" from="topCon/Photo/photo_button" to="." method="_on_photo_button_pressed"]
+[connection signal="mouse_entered" from="topCon/Photo/photo_button/textMargin/click here to replace photo" to="." method="_on_click_here_to_replace_photo_mouse_entered"]
+[connection signal="mouse_exited" from="topCon/Photo/photo_button/textMargin/click here to replace photo" to="." method="_on_click_here_to_replace_photo_mouse_exited"]
+[connection signal="pressed" from="bottomCon/buttons/resetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="bottomCon/buttons/saveButton" to="." method="_on_save_button_pressed"]

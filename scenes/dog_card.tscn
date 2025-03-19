@@ -1,0 +1,152 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxv1jkl7p7r"]
+
+[ext_resource type="Script" path="res://scenes/dog_card.gd" id="1_0uh8a"]
+[ext_resource type="Shader" path="res://scenes/dog_card.gdshader" id="2_ah6le"]
+[ext_resource type="FontFile" uid="uid://cgxi82mnvgbsg" path="res://fonts/Roboto/Roboto-Black.ttf" id="2_sc0tc"]
+[ext_resource type="Texture2D" uid="uid://1yveec70k0yt" path="res://localhost-file-not-found.jpg" id="3_ognp1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crtie"]
+shader = ExtResource("2_ah6le")
+shader_parameter/radius = 1.0
+shader_parameter/animate = false
+shader_parameter/square_scale = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcq68"]
+bg_color = Color(0.780392, 0.780392, 0.780392, 1)
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+
+[node name="dog_card" type="Control"]
+process_mode = 1
+custom_minimum_size = Vector2(250, 260)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -902.0
+offset_bottom = -388.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0uh8a")
+
+[node name="card" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 239.0
+theme_override_constants/separation = 0
+
+[node name="dog_photo" type="TextureRect" parent="card"]
+material = SubResource("ShaderMaterial_crtie")
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+texture = ExtResource("3_ognp1")
+expand_mode = 3
+
+[node name="info_background" type="Panel" parent="card"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_bcq68")
+
+[node name="info_container" type="VBoxContainer" parent="card/info_background"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 181.0
+offset_bottom = 77.0
+
+[node name="name_container" type="HBoxContainer" parent="card/info_background/info_container"]
+layout_mode = 2
+
+[node name="nameTag" type="RichTextLabel" parent="card/info_background/info_container/name_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.29
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_sc0tc")
+theme_override_font_sizes/normal_font_size = 12
+text = "Name:"
+fit_content = true
+
+[node name="nameValue" type="RichTextLabel" parent="card/info_background/info_container/name_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_sc0tc")
+theme_override_font_sizes/normal_font_size = 12
+fit_content = true
+
+[node name="type_container" type="HBoxContainer" parent="card/info_background/info_container"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="typeTag" type="RichTextLabel" parent="card/info_background/info_container/type_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.28
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_sc0tc")
+theme_override_font_sizes/normal_font_size = 12
+text = "Breed:"
+fit_content = true
+
+[node name="typeValue" type="RichTextLabel" parent="card/info_background/info_container/type_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_sc0tc")
+theme_override_font_sizes/normal_font_size = 12
+fit_content = true
+
+[node name="entry_container" type="HBoxContainer" parent="card/info_background/info_container"]
+layout_mode = 2
+
+[node name="entryTag" type="RichTextLabel" parent="card/info_background/info_container/entry_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.39
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_sc0tc")
+theme_override_font_sizes/normal_font_size = 12
+text = "Entered:"
+fit_content = true
+
+[node name="entryValue" type="RichTextLabel" parent="card/info_background/info_container/entry_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_sc0tc")
+theme_override_font_sizes/normal_font_size = 12
+fit_content = true
+
+[node name="exit_container" type="HBoxContainer" parent="card/info_background/info_container"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="exitTag" type="RichTextLabel" parent="card/info_background/info_container/exit_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.37
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_sc0tc")
+theme_override_font_sizes/normal_font_size = 12
+text = "Offload:"
+fit_content = true
+
+[node name="exitValue" type="RichTextLabel" parent="card/info_background/info_container/exit_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_sc0tc")
+theme_override_font_sizes/normal_font_size = 12
+fit_content = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="card/info_background" to="." method="_on_info_background_mouse_entered"]
+[connection signal="mouse_exited" from="card/info_background" to="." method="_on_info_background_mouse_exited"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcfpkfs38c5sy"]
+
+[ext_resource type="FontFile" uid="uid://cgxi82mnvgbsg" path="res://fonts/Roboto/Roboto-Black.ttf" id="1_ihrke"]
+[ext_resource type="Script" path="res://scenes/search_panel.gd" id="1_wm58e"]
+[ext_resource type="PackedScene" uid="uid://cdrfh4m3t5yu3" path="res://scenes/table.tscn" id="3_481qv"]
+
+[node name="search_panel" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+script = ExtResource("1_wm58e")
+
+[node name="spacer" type="Container" parent="."]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="hBoxCon" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="searchMargMan" type="MarginContainer" parent="hBoxCon"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 5
+
+[node name="search" type="RichTextLabel" parent="hBoxCon/searchMargMan"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme_override_fonts/normal_font = ExtResource("1_ihrke")
+text = "Search:
+"
+
+[node name="searchBarMargMan" type="MarginContainer" parent="hBoxCon"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 200
+
+[node name="search Bar" type="LineEdit" parent="hBoxCon/searchBarMargMan"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search Here"
+
+[node name="table" parent="." instance=ExtResource("3_481qv")]
+layout_mode = 2
+size_flags_stretch_ratio = 80.0
+type = "search"
+
+[connection signal="text_changed" from="hBoxCon/searchBarMargMan/search Bar" to="." method="_on_search_bar_text_changed"]
+
+[editable path="table"]

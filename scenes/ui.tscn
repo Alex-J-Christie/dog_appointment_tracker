@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d231y073di3v0"]
+
+[ext_resource type="Script" path="res://scenes/ui.gd" id="1_eb0a5"]
+[ext_resource type="PackedScene" uid="uid://bqnbkwlaftdm3" path="res://scenes/side_panel.tscn" id="3_tkgv7"]
+[ext_resource type="PackedScene" uid="uid://ttfx1m2hjcex" path="res://scenes/data_manager.tscn" id="4_rqvis"]
+[ext_resource type="Texture2D" uid="uid://d008y6wjycb7y" path="res://steel-blue-abstract-background-wallpaper-image_53876-104016.png" id="4_tkhva"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eb0a5")
+
+[node name="backGround" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tkhva")
+
+[node name="side_panel" parent="." instance=ExtResource("3_tkgv7")]
+layout_mode = 0
+
+[node name="data_manager" parent="." instance=ExtResource("4_rqvis")]
+
+[editable path="side_panel"]
+[editable path="side_panel/search_panel"]
+[editable path="side_panel/search_panel/table"]
+[editable path="side_panel/info_panel"]
+[editable path="side_panel/new_panel"]
